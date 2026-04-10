@@ -10,7 +10,7 @@ namespace Flow.Launcher.Plugin.Claude
 
         private const string ClaudeUrl = "https://claude.ai/new?q=";
         private const string IncognitoArg = "&incognito";
-        private const string QueryIconPath = "Icons/claude.ico";
+        private const string QueryIconPath = "Icons/Claude.png";
 
         private static readonly List<Result> EmptyResults = new();
     
