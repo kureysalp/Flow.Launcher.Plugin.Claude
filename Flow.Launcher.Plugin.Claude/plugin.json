@@ -1,0 +1,12 @@
+{
+    "ID": "47CB5139-693C-4CEA-9ED7-D18EC4926FFC",
+    "ActionKeyword": "cla",
+    "Name": "Claude",
+    "Description": "Open Claude in your browser with your prompt.",
+    "Author": "kureysalp",
+    "Version": "1.0.0",
+    "Language": "csharp",
+    "Website": "https://github.com/kureysalp/Flow.Launcher.Plugin.Claude",
+    "IcoPath": "Icons/Claude_AI_symbol.ico",
+    "ExecuteFileName": "Flow.Launcher.Plugin.Claude.dll"
+}

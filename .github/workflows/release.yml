@@ -1,0 +1,39 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - .github/workflows/*
+
+jobs:
+  publish:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+     
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: 'Flow.Launcher.Plugin.Claude/plugin.json'
+          prop_path: 'Version'
+      - run: echo ${{steps.version.outputs.prop}}
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "7.0.x"
+      - name: Build
+        run: ./release.ps1
+        
+      - name: Release
+        if: success()
+        uses: softprops/action-gh-release@v1
+        with:
+          files: 'Flow.Launcher.Plugin.Claude/bin/Claude.zip'
+          tag_name: "v${{steps.version.outputs.prop}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,2 @@
+dotnet publish Flow.Launcher.Plugin.Claude -c Release -r win-x64 --no-self-contained
+Compress-Archive -LiteralPath Flow.Launcher.Plugin.Claude/bin/Release/win-x64/publish -DestinationPath Flow.Launcher.Plugin.Claude/bin/Claude.zip -Force
