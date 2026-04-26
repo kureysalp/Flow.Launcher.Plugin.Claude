@@ -4,16 +4,18 @@ on:
   workflow_dispatch:
   push:
     branches: [ master ]
+    
     paths-ignore:
       - .github/workflows/*
+
+permissions:
+  contents: write
 
 jobs:
   publish:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v2
-     
       - name: get version
         id: version
         uses: notiz-dev/github-action-json-property@release
