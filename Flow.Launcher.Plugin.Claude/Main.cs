@@ -10,7 +10,7 @@ namespace Flow.Launcher.Plugin.Claude
 
         private const string ClaudeUrl = "https://claude.ai/new?q=";
         private const string IncognitoArg = "&incognito";
-        private const string QueryIconPath = "Icons/Claude.png";
+        private const string QueryIconPath = "Icons/claude.png";
 
         private static readonly List<Result> EmptyResults = new();
     
@@ -46,7 +46,7 @@ namespace Flow.Launcher.Plugin.Claude
         {
             return _ =>
             {
-                _context.API.OpenUrl($"{url}{Uri.EscapeDataString(query.Search)}");
+                _context.API.OpenUrl($"{url}{Uri.EscapeDataString(query.Search)}{args}");
                 return true;
             };
         }
