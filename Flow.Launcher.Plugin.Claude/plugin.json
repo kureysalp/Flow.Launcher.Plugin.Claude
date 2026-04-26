@@ -7,6 +7,6 @@
     "Version": "1.0.1",
     "Language": "csharp",
     "Website": "https://github.com/kureysalp/Flow.Launcher.Plugin.Claude",
-    "IcoPath": "Icons/Claude.png",
+    "IcoPath": "Icons/claude.png",
     "ExecuteFileName": "Flow.Launcher.Plugin.Claude.dll"
 }
